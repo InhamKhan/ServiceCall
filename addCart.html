@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingCart Items</title>
+</head>
+<body>
+    <h2>ShoppingCart Products</h2>
+    <form action="http://localhost:8080/addCart.htm"  onsubmit="return validateShoppingCart();" method="POST">
+      <table>
+        <tr>
+          <th>Buy Products from ShoppingCart Add to Cart</th>
+        </tr>
+        <tr>
+          <td></td>
+         
+        </tr>
+        <tr>
+          <td>ProductName:</td>
+          <td>
+            <input
+              type="text"
+              name="p_name"
+              id="p_name"
+              
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td>
+            <input
+              type="text"
+              name="unit_price"
+              id="unit_price"
+              >
+          </td>
+        </tr>
+        <tr>
+          <td>Quantity:</td>
+          <td>
+            <input
+              type="text"
+              name="quantity"
+              id="quantity"
+              >
+            
+          </td>
+        </tr>
+       
+
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center">
+            <input type="submit"/>
+          </td>
+        </tr>
+      </table>
+  </form>
+    
+</body>
+<script>
+  function validateShoppingCart(){
+    console.log("validateShoppingCart().....");
+    let valid = true;
+
+    let productName = document.getElementById("p_name").value;
+    let unitPrice = document.getElementById("unit_price").value;
+    let totalQuantity = document.getElementById("quantity").value;
+
+    console.log("p_name ="+productName);
+    console.log("unit_price ="+unitPrice);
+    console.log("quantity ="+totalQuantity);
+
+    if(productName == ""){
+      console.log("productName is empty");
+      document.getElementById("p_name").focus();
+      valid = false;
+      return valid;
+    }
+    if(unitPrice == ""){
+      console.log("unitPrice is empty");
+      document.getElementById("unit_price").focus();
+      valid = false;
+      return valid;
+    }
+    if(totalQuantity == ""){
+      console.log("totalQuantity is empty");
+      document.getElementById("quantity").focus();
+      valid = false;
+      return valid;
+    }
+  }
+  console.log('End validateShoppingCart')
+</script>
+</html>

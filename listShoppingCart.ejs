@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: auto;
+        margin: auto;
+        text-align: center;
+        position: center;
+        display: inline-grid;
+        border-color: 2 solid rgb(148, 145, 145);
+      }
+      h1{
+        padding-left: 2%;
+        text-align: center;
+        color: rgb(190, 138, 48);
+      }
+      ul {
+        position: sticky;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(212, 121, 11);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: rgb(249, 151, 4);
+      }
+
+      table {
+
+        border-collapse: collapse;
+        width: 150%;
+        overflow: auto;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      th,
+      td {
+        text-align: initial;
+        padding: 5px 32px 6px 20px;
+        margin: 0;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+      .btn {
+        text-align: right;
+        color: rgb(137, 139, 46);
+        display: inline-grid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To Check List of Products in ShoppingCart </h1>
+    <table colspan="2" class="td_center">
+      <tr>
+        <td>
+          
+        </td>
+      </tr>
+
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <th>productName</th>
+        <th>Price</th>
+        <th>Quantity</th>
+
+        <th>Total</th>
+        <th></th>
+    </tr>
+    <% for(var a=0; a < data.length; a++){ %>
+        <tr>
+            <td> <%=data[a].p_name %></td>
+            <td> <%=data[a].unit_price %></td>
+            <td> <%=data[a].quantity %></td>
+            <td> <%=data[a].total %></td>
+        </tr>
+        <td>
+            <a href="editShoppingCart.htm?doc_id=<%= data[a].p_name %>">Update</a>
+            <a href="deleteShoppingCart.htm?doc_id=<%= data[a].p_name %>">Delete</a>
+        </td>
+    <% } %>
+        
+    </table>
+    </body>
+    </html>
